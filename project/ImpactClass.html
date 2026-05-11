@@ -29,6 +29,7 @@
 <script type="text/babel" src="screens/course.jsx"></script>
 <script type="text/babel" src="screens/pricing.jsx"></script>
 <script type="text/babel" src="screens/dashboard.jsx"></script>
+<script type="text/babel" src="screens/partners.jsx"></script>
 
 <script type="text/babel">
 function App() {
@@ -37,11 +38,11 @@ function App() {
       title="ImpactClass — par Golden Impact"
       subtitle="Plateforme premium d'e-learning entrepreneurial africain · 5 écrans · maquettes interactives"
     >
-      <DCSection id="web" title="Plateforme Web — 5 écrans">
+      <DCSection id="web" title="Plateforme Web — 6 écrans">
         <DCArtboard id="landing" label="01 · Landing Hero" width={1440} height={900}>
           <LandingHero />
         </DCArtboard>
-        <DCArtboard id="catalogue" label="02 · Catalogue de Cours" width={1440} height={1000}>
+        <DCArtboard id="catalogue" label="02 · Catalogue de Cours" width={1440} height={1100}>
           <Catalogue />
         </DCArtboard>
         <DCArtboard id="course" label="03 · Page Cours" width={1440} height={1100}>
@@ -52,6 +53,9 @@ function App() {
         </DCArtboard>
         <DCArtboard id="dashboard" label="05 · Dashboard Apprenant" width={1440} height={1000}>
           <Dashboard />
+        </DCArtboard>
+        <DCArtboard id="partenaires" label="06 · Partenaires" width={1440} height={1100}>
+          <Partners />
         </DCArtboard>
       </DCSection>
     </DesignCanvas>

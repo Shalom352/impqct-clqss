@@ -21,10 +21,10 @@ function Logo({ size = 18 }) {
 function Navbar({ active = "" }) {
   const { navigate } = useRouter();
   const links = [
-    { id: "cours",        label: "Cours",         route: "catalogue" },
-    { id: "instructeurs", label: "Instructeurs",   route: "catalogue" },
-    { id: "tarifs",       label: "Tarifs",         route: "pricing"   },
-    { id: "blog",         label: "Blog",           route: "landing"   },
+    { id: "cours",        label: "Cours",         route: "catalogue"   },
+    { id: "instructeurs", label: "Instructeurs",   route: "catalogue"   },
+    { id: "partenaires",  label: "Partenaires",    route: "partenaires" },
+    { id: "tarifs",       label: "Tarifs",         route: "pricing"     },
   ];
   return (
     <div className="nav">

@@ -26,7 +26,7 @@ function LandingHero() {
             <div style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "5px 5px 5px 12px", border: "1px solid var(--hairline-2)", borderRadius: 999, marginBottom: 28, background: "rgba(255,255,255,0.02)" }}>
               <span className="overline" style={{ fontSize: 10 }}>S2 · 2026</span>
               <span className="tag" style={{ borderRadius: 999, padding: "3px 8px" }}>
-                <span className="tag-dot pulse" style={{ background: "var(--success)" }}/> 12 cours en ligne
+                <span className="tag-dot" style={{ background: "var(--success)"}}/> 12 cours disponibles
               </span>
             </div>
 
@@ -57,13 +57,13 @@ function LandingHero() {
             {/* Trust strip — inline */}
             <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
               <div style={{ display: "flex" }}>
-                {["TE", "IA", "AD", "NO", "FA"].map((i, idx) => (
+                {["KD", "AM", "FO", "BT", "SR"].map((i, idx) => (
                   <Avatar key={i} initials={i} size={28} ring style={{ marginLeft: idx === 0 ? 0 : -8, borderColor: "#0E0E0E", background: ["#2a2118", "#1f2620", "#251a1a", "#1a2228", "#2a201f"][idx] }} />
                 ))}
               </div>
               <div>
-                <div style={{ fontSize: 12, color: "#fff", fontWeight: 500 }}>5 000+ apprenants actifs</div>
-                <div style={{ fontSize: 11, color: "var(--text-3)", fontFamily: "JetBrains Mono" }}>+342 cette semaine</div>
+                <div style={{ fontSize: 13, color: "#fff", fontWeight: 500 }}>+5 000 apprenants formés</div>
+                <div style={{ fontSize: 11, color: "var(--text-3)", fontFamily: "JetBrains Mono" }}>23 PAYS AFRICAINS · CERTIFIÉS</div>
               </div>
             </div>
           </div>
@@ -75,17 +75,66 @@ function LandingHero() {
         {/* Stats row */}
         <div className="brackets" style={{ marginTop: 56, padding: "28px 32px", border: "1px solid var(--hairline)", borderRadius: 8, background: "rgba(255,255,255,0.015)", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
           {[
-            { num: "12", label: "Instructeurs vérifiés", sub: "Forbes 30, fondateurs unicornes" },
+            { num: "12", label: "Instructeurs vérifiés", sub: "Ministres, PDG, fondateurs" },
             { num: "184", label: "Leçons HD", sub: "Tournées 4K · sous-titrées" },
-            { num: "5 000+", label: "Apprenants actifs", sub: "23 pays africains" },
+            { num: "5 000+", label: "Apprenants formés", sub: "23 pays africains" },
             { num: "92%", label: "Taux de complétion", sub: "Top 3 mondial" },
           ].map((s, i) => (
             <div key={i} style={{ borderRight: i < 3 ? "1px solid var(--hairline)" : "none", padding: "0 24px" }}>
-              <div className="ic-h" style={{ fontSize: 38, color: "var(--gold)", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 4 }}>{s.num}</div>
-              <div style={{ fontSize: 12, color: "#fff", fontWeight: 500, marginBottom: 2 }}>{s.label}</div>
-              <div style={{ fontSize: 11, color: "var(--text-3)", fontFamily: "JetBrains Mono" }}>{s.sub}</div>
+              <div className="ic-h" style={{ fontSize: 40, color: "var(--gold)", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 6 }}>{s.num}</div>
+              <div style={{ fontSize: 14, color: "#fff", fontWeight: 500, marginBottom: 3 }}>{s.label}</div>
+              <div style={{ fontSize: 12, color: "var(--text-3)", fontFamily: "JetBrains Mono" }}>{s.sub}</div>
             </div>
           ))}
+        </div>
+
+        {/* Section Parcours */}
+        <div style={{ marginTop: 64 }}>
+          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 28 }}>
+            <div>
+              <div className="overline" style={{ marginBottom: 12 }}>/ Parcours thématiques</div>
+              <h3 className="ic-h" style={{ fontSize: 36, fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.05 }}>
+                6 parcours pour <span style={{ color: "var(--gold)", fontStyle: "italic" }}>renforcer votre PME</span>
+              </h3>
+            </div>
+            <button className="btn btn-ghost-gold btn-sm" style={{ marginBottom: 4 }}>
+              Voir tous les cours <Icon.ArrowRight size={12} color="var(--gold)" />
+            </button>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+            {[
+              { id: "Business Starter",       icon: "🚀", color: "#F5C800", desc: "Les fondamentaux pour lancer son activité", count: 3 },
+              { id: "Financial Mastery",      icon: "📊", color: "#22C55E", desc: "Maîtrise des chiffres et mécanismes de financement", count: 3 },
+              { id: "Marketing Principles",   icon: "📣", color: "#F97316", desc: "Stratégies pour faire connaître son entreprise", count: 2 },
+              { id: "Compétences numériques", icon: "💻", color: "#A78BFA", desc: "Outils digitaux et transformation numérique", count: 2 },
+              { id: "Comptabilité & Finance", icon: "🧾", color: "#38BDF8", desc: "Gestion comptable et finance d'entreprise", count: 1 },
+              { id: "Gestion de projet",      icon: "🗂", color: "#F472B6", desc: "Planifier, organiser et piloter ses projets", count: 1 },
+            ].map((t, i) => (
+              <div key={i} style={{
+                background: "var(--card)",
+                border: `1px solid #242424`,
+                borderRadius: 8,
+                padding: "20px 22px",
+                display: "flex", alignItems: "flex-start", gap: 16,
+                cursor: "pointer",
+                transition: "all 0.2s",
+              }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = t.color; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = "#242424"; e.currentTarget.style.transform = "none"; }}
+              >
+                <div style={{ width: 48, height: 48, borderRadius: 10, background: `${t.color}18`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, flexShrink: 0 }}>
+                  {t.icon}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                    <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", fontFamily: "Space Grotesk" }}>{t.id}</div>
+                    <span style={{ fontSize: 11, color: t.color, fontFamily: "JetBrains Mono", fontWeight: 600 }}>{t.count} COURS</span>
+                  </div>
+                  <div style={{ fontSize: 13, color: "var(--text-3)", lineHeight: 1.45 }}>{t.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -114,7 +163,7 @@ function HeroVisual() {
 
         {/* top chip */}
         <div style={{ position: "absolute", top: 16, left: 16, display: "flex", gap: 6 }}>
-          <span className="tag tag-live"><span className="tag-dot pulse"/> EN LIVE</span>
+          <span className="tag tag-gold"><Icon.Sparkle size={9} color="var(--gold)" /> COURS PHARE</span>
           <span className="tag">SESSION Q&R · 18:30</span>
         </div>
         <div style={{ position: "absolute", top: 16, right: 16 }}>
@@ -156,18 +205,18 @@ function HeroVisual() {
         </div>
       </div>
 
-      {/* floating chip bottom-right */}
+      {/* floating chip bottom-right — stats certifiés */}
       <div style={{ position: "absolute", bottom: -16, right: -16, background: "var(--bg)", border: "1px solid var(--hairline-2)", borderRadius: 6, padding: 12, width: 200 }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-          <span className="overline" style={{ fontSize: 9 }}>En direct</span>
-          <Icon.TrendUp size={11} color="var(--success)"/>
+          <span className="overline" style={{ fontSize: 9 }}>Certifiés</span>
+          <Icon.Award size={11} color="var(--gold)"/>
         </div>
         <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 6 }}>
-          <span className="ic-h" style={{ fontSize: 20 }}>+342</span>
-          <span style={{ fontSize: 10, color: "var(--success)", fontFamily: "JetBrains Mono" }}>+12.4%</span>
+          <span className="ic-h" style={{ fontSize: 20 }}>92%</span>
+          <span style={{ fontSize: 10, color: "var(--success)", fontFamily: "JetBrains Mono" }}>taux de complétion</span>
         </div>
-        <div style={{ fontSize: 10, color: "var(--text-3)" }}>Nouveaux apprenants · 7j</div>
-        {/* mini sparkline */}
+        <div style={{ fontSize: 11, color: "var(--text-3)" }}>Top 3 mondial · 23 pays</div>
+        {/* mini bar chart */}
         <svg viewBox="0 0 100 24" width="100%" height="24" style={{ marginTop: 6 }}>
           <polyline fill="none" stroke="var(--gold)" strokeWidth="1.5" points="0,18 12,16 24,17 36,12 48,14 60,8 72,10 84,5 100,2"/>
         </svg>

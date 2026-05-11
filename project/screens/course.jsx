@@ -187,10 +187,10 @@ function CoursePage() {
         <div style={{ position: "sticky", top: 16, display: "flex", flexDirection: "column", gap: 16 }}>
           <div className="surface brackets" style={{ padding: 22 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
-              <Avatar initials="TE" size={48} ring />
+              <Avatar initials="LZ" size={48} ring />
               <div>
-                <div style={{ fontSize: 14, color: "#fff", fontWeight: 600 }}>Tony Elumelu</div>
-                <div className="mono" style={{ fontSize: 10, color: "var(--text-3)", letterSpacing: "0.06em" }}>HEIRS HOLDINGS · LAGOS</div>
+                <div style={{ fontSize: 15, color: "#fff", fontWeight: 600 }}>Lionel Zinsou</div>
+                <div className="mono" style={{ fontSize: 10, color: "var(--text-3)", letterSpacing: "0.06em" }}>EX-PREMIER MINISTRE · BÉNIN</div>
               </div>
               <button className="btn btn-ghost btn-sm" style={{ marginLeft: "auto" }}>Suivre</button>
             </div>
@@ -198,9 +198,9 @@ function CoursePage() {
             <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 18, padding: "16px 0", borderTop: "1px solid var(--hairline)", borderBottom: "1px solid var(--hairline)" }}>
               <ProgressRing percent={42} size={72} />
               <div>
-                <div style={{ fontSize: 11, color: "var(--text-3)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 4 }}>Progression</div>
-                <div className="ic-h" style={{ fontSize: 18, fontWeight: 700 }}>10 / 24 leçons</div>
-                <div className="mono" style={{ fontSize: 10, color: "var(--text-3)", marginTop: 2 }}>3H 24MIN RESTANTES</div>
+                <div style={{ fontSize: 12, color: "var(--text-3)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 4 }}>Progression</div>
+                <div className="ic-h" style={{ fontSize: 20, fontWeight: 700 }}>10 / 24 leçons</div>
+                <div className="mono" style={{ fontSize: 11, color: "var(--text-3)", marginTop: 2 }}>3H 24MIN RESTANTES</div>
               </div>
             </div>
 
@@ -220,15 +220,17 @@ function CoursePage() {
             <CertificatePreview />
           </div>
 
-          <div className="surface" style={{ padding: 16, display: "flex", alignItems: "center", gap: 12 }}>
-            <span style={{ width: 36, height: 36, borderRadius: 6, background: "rgba(245,200,0,0.1)", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
-              <Icon.Globe size={16} color="var(--gold)"/>
-            </span>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 13, color: "#fff", fontWeight: 500 }}>Session live mardi 19h</div>
-              <div className="mono" style={{ fontSize: 10, color: "var(--text-3)" }}>Q&R AVEC TONY · 60 PLACES</div>
+          <div className="surface">
+            <div style={{ display: "flex", alignItems: "center", gap: 12, padding: 16 }}>
+              <span style={{ width: 36, height: 36, borderRadius: 6, background: "rgba(245,200,0,0.1)", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+                <Icon.Globe size={16} color="var(--gold)"/>
+              </span>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: 14, color: "#fff", fontWeight: 500 }}>Session live mardi 19h</div>
+                <div className="mono" style={{ fontSize: 11, color: "var(--text-3)" }}>Q&R AVEC LIONEL · 60 PLACES</div>
+              </div>
+              <Icon.ArrowUpRight size={14} color="var(--gold)"/>
             </div>
-            <Icon.ArrowUpRight size={14} color="var(--gold)"/>
           </div>
         </div>
       </div>

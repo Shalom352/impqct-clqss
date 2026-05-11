@@ -11,9 +11,9 @@
   --gold-2: #FFD81A;
   --gold-dim: #8a7300;
   --text: #FFFFFF;
-  --text-2: #B5B5B5;
-  --text-3: #777777;
-  --text-4: #555555;
+  --text-2: #C8C8C8;
+  --text-3: #909090;
+  --text-4: #606060;
   --success: #22C55E;
   --danger: #ff5247;
 }
@@ -36,8 +36,8 @@ body {
     var(--bg);
   color: var(--text);
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
   overflow: hidden;
   position: relative;
 }
@@ -56,17 +56,17 @@ h1, h2, h3, h4, .ic-h {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 28px;
+  padding: 16px 32px;
   border-bottom: 1px solid var(--hairline);
   background: rgba(14,14,14,0.85);
   backdrop-filter: blur(14px);
   position: relative;
   z-index: 50;
-  font-size: 13px;
+  font-size: 14px;
 }
 .nav-left { display: flex; align-items: center; gap: 28px; }
 .nav-mid { display: flex; gap: 4px; padding: 4px; border: 1px solid var(--hairline); border-radius: 999px; background: rgba(255,255,255,0.015); }
-.nav-mid a { padding: 7px 14px; border-radius: 999px; color: var(--text-2); cursor: pointer; transition: 0.15s; font-size: 12.5px; font-weight: 500; text-decoration: none; }
+.nav-mid a { padding: 8px 16px; border-radius: 999px; color: var(--text-2); cursor: pointer; transition: 0.15s; font-size: 14px; font-weight: 500; text-decoration: none; }
 .nav-mid a:hover { color: #fff; }
 .nav-mid a.active { background: rgba(255,255,255,0.06); color: #fff; }
 .nav-right { display: flex; align-items: center; gap: 10px; }
@@ -149,9 +149,9 @@ h1, h2, h3, h4, .ic-h {
 
 .tag {
   display: inline-flex; align-items: center; gap: 5px;
-  padding: 3px 8px;
+  padding: 4px 10px;
   font-family: 'JetBrains Mono';
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   background: rgba(255,255,255,0.04);
@@ -174,9 +174,9 @@ h1, h2, h3, h4, .ic-h {
 /* === PILLS === */
 .pill {
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 7px 13px;
+  padding: 9px 16px;
   border-radius: 999px;
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 500;
   border: 1px solid var(--hairline-2);
   color: var(--text-2);
@@ -193,8 +193,8 @@ h1, h2, h3, h4, .ic-h {
 /* === OVERLINE === */
 .overline {
   font-family: 'JetBrains Mono';
-  font-size: 10.5px;
-  letter-spacing: 0.16em;
+  font-size: 12px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 500;
