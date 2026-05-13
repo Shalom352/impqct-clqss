@@ -97,7 +97,7 @@ function LandingHero() {
                 6 parcours pour <span style={{ color: "var(--gold)", fontStyle: "italic" }}>renforcer votre PME</span>
               </h3>
             </div>
-            <button className="btn btn-ghost-gold btn-sm" style={{ marginBottom: 4 }}>
+            <button className="btn btn-ghost-gold btn-sm" style={{ marginBottom: 4 }} onClick={() => navigate("catalogue")}>
               Voir tous les cours <Icon.ArrowRight size={12} color="var(--gold)" />
             </button>
           </div>
@@ -153,40 +153,47 @@ function LandingHero() {
 }
 
 function HeroVisual() {
+  const { navigate } = useRouter();
   return (
     <div style={{ position: "relative", aspectRatio: "1 / 1", maxHeight: 520 }}>
-      {/* Main featured course card */}
-      <div className="surface" style={{ position: "absolute", inset: 0, padding: 0, overflow: "hidden", borderColor: "rgba(245,200,0,0.3)", boxShadow: "0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(245,200,0,0.1)" }}>
-        <Thumb label="" style={{ position: "absolute", inset: 0 }}>
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.85) 100%)" }}/>
-        </Thumb>
+      {/* Main featured course card — Kacou Diagou */}
+      <div className="surface" style={{ position: "absolute", inset: 0, padding: 0, overflow: "hidden", borderColor: "rgba(245,200,0,0.3)", boxShadow: "0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(245,200,0,0.1)", cursor: "pointer" }} onClick={() => navigate("catalogue")}>
+
+        {/* Vraie photo de l'instructeur */}
+        <img
+          src="photos/kacou-diagou.jpg"
+          alt="Kacou Diagou"
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block", position: "absolute", inset: 0 }}
+        />
+        {/* Gradient overlay */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.88) 100%)" }}/>
 
         {/* top chip */}
         <div style={{ position: "absolute", top: 16, left: 16, display: "flex", gap: 6 }}>
           <span className="tag tag-gold"><Icon.Sparkle size={9} color="var(--gold)" /> COURS PHARE</span>
-          <span className="tag">SESSION Q&R · 18:30</span>
+          <span className="tag">BUSINESS STARTER</span>
         </div>
         <div style={{ position: "absolute", top: 16, right: 16 }}>
-          <span className="tag mono">04:32 / 18:30</span>
+          <span className="tag mono">22 LEÇONS · 7H</span>
         </div>
 
         {/* center play */}
-        <div style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", width: 76, height: 76, borderRadius: 999, background: "var(--gold)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 0 0 8px rgba(245,200,0,0.15), 0 0 0 16px rgba(245,200,0,0.07)" }}>
+        <div style={{ position: "absolute", left: "50%", top: "45%", transform: "translate(-50%, -50%)", width: 76, height: 76, borderRadius: 999, background: "var(--gold)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 0 0 8px rgba(245,200,0,0.15), 0 0 0 16px rgba(245,200,0,0.07)" }}>
           <Icon.Play size={28} color="#0A0A0A" />
         </div>
 
         {/* bottom info */}
         <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: 20 }}>
-          <div className="overline" style={{ marginBottom: 8 }}>Ch. 02 · Identifier une opportunité</div>
-          <div className="ic-h" style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, lineHeight: 1.15 }}>
-            Construire une entreprise<br/>panafricaine
+          <div className="overline" style={{ marginBottom: 8 }}>Ch. 01 · Vision stratégique</div>
+          <div className="ic-h" style={{ fontSize: 20, fontWeight: 700, marginBottom: 12, lineHeight: 1.2 }}>
+            Leadership politique &<br/>Vision pour bâtir un pays
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <Avatar initials="TE" size={28} ring />
+              <img src="photos/kacou-diagou.jpg" alt="Kacou Diagou" style={{ width: 28, height: 28, borderRadius: 999, objectFit: "cover", border: "1.5px solid var(--gold)" }} />
               <div>
-                <div style={{ fontSize: 12, color: "#fff", fontWeight: 500 }}>Tony Elumelu</div>
-                <div style={{ fontSize: 10, color: "var(--text-3)", fontFamily: "JetBrains Mono" }}>HEIRS HOLDINGS · LAGOS</div>
+                <div style={{ fontSize: 12, color: "#fff", fontWeight: 600 }}>Kacou Diagou</div>
+                <div style={{ fontSize: 10, color: "var(--text-3)", fontFamily: "JetBrains Mono" }}>POLITICAL LEADER · CÔTE D'IVOIRE</div>
               </div>
             </div>
             <div className="progress-segmented" style={{ maxWidth: 100 }}>
@@ -200,7 +207,7 @@ function HeroVisual() {
       <div style={{ position: "absolute", top: -18, left: -18, background: "var(--bg)", border: "1px solid var(--hairline-2)", borderRadius: 6, padding: "8px 12px", display: "flex", alignItems: "center", gap: 8, fontSize: 11, color: "#fff" }}>
         <Icon.Sparkle size={12} color="var(--gold)" />
         <div>
-          <div style={{ fontWeight: 600 }}>Note moyenne 4.92 / 5</div>
+          <div style={{ fontWeight: 600 }}>Note moyenne 4.95 / 5</div>
           <div style={{ fontSize: 10, color: "var(--text-3)", fontFamily: "JetBrains Mono" }}>2 134 AVIS VÉRIFIÉS</div>
         </div>
       </div>
@@ -216,7 +223,6 @@ function HeroVisual() {
           <span style={{ fontSize: 10, color: "var(--success)", fontFamily: "JetBrains Mono" }}>taux de complétion</span>
         </div>
         <div style={{ fontSize: 11, color: "var(--text-3)" }}>Top 3 mondial · 23 pays</div>
-        {/* mini bar chart */}
         <svg viewBox="0 0 100 24" width="100%" height="24" style={{ marginTop: 6 }}>
           <polyline fill="none" stroke="var(--gold)" strokeWidth="1.5" points="0,18 12,16 24,17 36,12 48,14 60,8 72,10 84,5 100,2"/>
         </svg>
