@@ -14,80 +14,119 @@
   #root { min-height: 100vh; }
   .ic-screen { min-height: 100vh; height: auto; overflow: visible; }
 
-  /* === LANDING RESPONSIVE === */
-  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
-  .hero-visual { display: block; }
-  .hero-h1 { font-size: 76px; line-height: 0.98; }
-  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-  .parcours-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .hero-wrap { padding: 72px 56px 24px; max-width: 1320px; margin: 0 auto; }
-  .mobile-menu { display: none; }
-  .nav-mobile-overlay { display: none; }
+  /* === LANDING MOBILE-FIRST === */
+  .hero-wrap {
+    padding: 36px 20px 8px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .hero-h1 { font-size: clamp(34px, 8vw, 76px); line-height: 1.05; }
+  .hero-sub { max-width: 520px; }
+  .hero-ctas { }
+  .mobile-br { display: none; }
 
-  /* Tablette */
-  @media (max-width: 1024px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-visual { max-width: 500px; margin: 0 auto; }
-    .hero-h1 { font-size: 56px; }
-    .hero-wrap { padding: 48px 32px 24px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--hairline); }
-    .stats-grid > div { background: var(--bg); }
-    .parcours-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Stats grid: 2x2 on mobile, 4 colonnes desktop */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--hairline);
+  }
+  .stat-cell { background: #0E0E0E; }
+
+  /* Parcours: 2 col par défaut */
+  .parcours-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Hero course card */
+  .hero-course-card { box-shadow: 0 24px 60px -12px rgba(0,0,0,0.7); }
+
+  /* Tablet+ */
+  @media (min-width: 640px) {
+    .hero-wrap { padding: 56px 40px 16px; }
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    .parcours-grid { grid-template-columns: repeat(3, 1fr); }
+    .hero-course-card img { height: 300px !important; }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .hero-wrap { padding: 72px 56px 24px; max-width: 1320px; }
+    .mobile-br { display: none; }
+    .hero-h1 { font-size: 76px; line-height: 0.98; }
+    .hero-sub { font-size: 17px; }
+    .hero-course-card img { height: 360px !important; }
+    .parcours-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* Catalogue layout */
+  .catalogue-wrap { padding: 24px 20px 48px; max-width: 1320px; margin: 0 auto; }
+  .catalogue-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--hairline); gap: 16px; flex-wrap: wrap; flex-direction: column; }
+  .search-box { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--hairline-2); border-radius: 6px; background: rgba(255,255,255,0.02); width: 100%; }
+  .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .track-btn { border-radius: 8px; padding: 12px; cursor: pointer; text-align: left; transition: all 0.2s; }
+  .course-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .course-card { background: var(--card); border-radius: 8px; overflow: hidden; cursor: pointer; transition: all 0.2s ease; }
+
+  @media (min-width: 640px) {
     .catalogue-wrap { padding: 28px 32px 48px; }
+    .catalogue-header { flex-direction: row; align-items: flex-end; }
+    .search-box { width: auto; min-width: 220px; }
     .tracks-grid { grid-template-columns: repeat(3, 1fr); }
-    .course-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .course-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .catalogue-wrap { padding: 40px 56px 64px; }
+    .tracks-grid { grid-template-columns: repeat(6, 1fr); gap: 10px; }
+    .course-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
   }
 
-  /* Mobile */
+  /* Nav */
+  .mobile-menu { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.05); border: 1px solid var(--hairline-2); border-radius: 6px; cursor: pointer; }
+  @media (min-width: 769px) {
+    .mobile-menu { display: none !important; }
+    .nav-mid { display: flex !important; }
+  }
   @media (max-width: 768px) {
-    /* Nav mobile */
-    .nav { padding: 14px 16px; position: relative; }
+    .nav { padding: 12px 16px; }
     .nav-mid { display: none; }
-    .nav-right { gap: 8px; }
     .nav-right .btn-ghost { display: none; }
-    .mobile-menu { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.05); border: 1px solid var(--hairline-2); border-radius: 6px; cursor: pointer; }
-
-    /* Hero */
-    .hero-wrap { padding: 32px 16px 16px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-    .hero-visual { max-width: 100%; }
-    .hero-h1 { font-size: 42px; line-height: 1.05; letter-spacing: -0.03em; }
-
-    /* Stats */
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-
-    /* Parcours */
-    .parcours-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-
-    /* Catalogue */
-    .catalogue-wrap { padding: 20px 16px 48px; }
-    .catalogue-header { flex-direction: column; align-items: flex-start; }
-    .search-box { width: 100%; min-width: unset; }
-    .tracks-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .track-btn { padding: 12px 10px; }
-    .course-grid { grid-template-columns: 1fr; gap: 14px; }
-
-    /* Announcement bar */
-    .announce-bar { flex-wrap: wrap; text-align: center; padding: 10px 16px; font-size: 12px; }
-
-    /* Pricing */
-    .pricing-cards { grid-template-columns: 1fr !important; }
-    .pricing-wrap { padding: 32px 16px !important; }
-
-    /* Partners */
-    .partners-grid { grid-template-columns: repeat(2, 1fr) !important; }
-    .partners-stats { grid-template-columns: 1fr !important; }
-    .partners-hero { padding: 40px 16px 32px !important; }
-    .partners-section { padding: 0 16px 40px !important; }
-    .enterprise-strip { flex-direction: column !important; gap: 20px !important; padding: 24px 20px !important; }
-    .temoignages-grid { grid-template-columns: 1fr !important; }
+    .nav-right .btn-gold { font-size: 13px; padding: 8px 12px; }
   }
 
-  @media (max-width: 480px) {
-    .hero-h1 { font-size: 34px; }
-    .tracks-grid { grid-template-columns: 1fr 1fr; }
-    .parcours-grid { grid-template-columns: 1fr 1fr; }
-    .partners-grid { grid-template-columns: 1fr 1fr !important; }
+  /* Partners */
+  .partners-hero { padding: 40px 20px 24px; max-width: 1320px; margin: 0 auto; }
+  .partners-section { padding: 0 20px 40px; max-width: 1320px; margin: 0 auto; }
+  .partners-stats { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--hairline); border-radius: 8px; overflow: hidden; }
+  .partners-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .temoignages-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .enterprise-strip { display: flex; flex-direction: column; gap: 20px; padding: 24px 20px; }
+  @media (min-width: 640px) {
+    .partners-hero { padding: 56px 40px 32px; }
+    .partners-section { padding: 0 40px 48px; }
+    .partners-stats { grid-template-columns: repeat(3, 1fr); }
+    .partners-grid { grid-template-columns: repeat(3, 1fr); }
+    .temoignages-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .partners-hero { padding: 64px 56px 48px; }
+    .partners-section { padding: 0 56px 56px; }
+    .partners-grid { grid-template-columns: repeat(4, 1fr); }
+    .enterprise-strip { flex-direction: row; align-items: center; justify-content: space-between; padding: 40px 48px; }
+  }
+
+  /* Pricing */
+  .pricing-wrap { padding: 32px 20px; max-width: 1100px; margin: 0 auto; }
+  .pricing-cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 640px) {
+    .pricing-wrap { padding: 48px 40px; }
+    .pricing-cards { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .pricing-wrap { padding: 56px 56px; }
   }
 </style>
 </head>
