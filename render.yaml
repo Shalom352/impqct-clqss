@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: impqct-clqss
+    runtime: static
+    staticPublishPath: ./project
+    buildCommand: ""
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /ImpactClass.html
