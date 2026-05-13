@@ -52,7 +52,7 @@ function LandingHero() {
         </div>
 
         {/* Trust strip */}
-        <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 40 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
           <div style={{ display: "flex" }}>
             {["KD", "JB", "DD", "SZ", "AS"].map((ini, idx) => (
               <Avatar key={ini} initials={ini} size={28} ring style={{ marginLeft: idx === 0 ? 0 : -8, borderColor: "#0E0E0E", background: ["#2a2118", "#1f2620", "#251a1a", "#1a2228", "#2a201f"][idx] }} />
@@ -65,11 +65,11 @@ function LandingHero() {
         </div>
 
         {/* Hero visual card — cours phare */}
-        <div className="hero-course-card" onClick={() => navigate("catalogue")} style={{ cursor: "pointer", borderRadius: 12, overflow: "hidden", border: "1px solid rgba(245,200,0,0.3)", marginBottom: 40, position: "relative", background: "#111" }}>
+        <div className="hero-course-card" onClick={() => navigate("catalogue")} style={{ cursor: "pointer", borderRadius: 12, overflow: "hidden", border: "1px solid rgba(245,200,0,0.3)", marginBottom: 32, position: "relative", background: "#111", minHeight: 240 }}>
           {/* Photo */}
-          <img src="photos/kacou-diagou.jpg" alt="Kacou Diagou" style={{ width: "100%", height: 220, objectFit: "cover", objectPosition: "top center", display: "block" }} />
+          <img src="photos/kacou-diagou.jpg" alt="Kacou Diagou" style={{ width: "100%", height: 240, objectFit: "cover", objectPosition: "top center", display: "block" }} />
           {/* Gradient */}
-          <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 220, background: "linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%)" }} />
+          <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%)" }} />
           {/* Badges top */}
           <div style={{ position: "absolute", top: 12, left: 12, display: "flex", gap: 6 }}>
             <span className="tag tag-gold"><Icon.Sparkle size={9} color="var(--gold)" /> COURS PHARE</span>
@@ -110,7 +110,7 @@ function LandingHero() {
             { num: "92%",    label: "Taux de complétion",    sub: "Top 3 mondial" },
           ].map((s, i) => (
             <div key={i} className="stat-cell" style={{ padding: "20px 16px", background: "rgba(255,255,255,0.015)" }}>
-              <div className="ic-h" style={{ fontSize: 32, color: "var(--gold)", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 4 }}>{s.num}</div>
+              <div className="ic-h" style={{ fontSize: 30, color: "var(--gold)", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 4, whiteSpace: "nowrap" }}>{s.num}</div>
               <div style={{ fontSize: 13, color: "#fff", fontWeight: 500, marginBottom: 2 }}>{s.label}</div>
               <div style={{ fontSize: 11, color: "var(--text-3)", fontFamily: "JetBrains Mono" }}>{s.sub}</div>
             </div>
