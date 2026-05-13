@@ -15,13 +15,13 @@ function LandingHero() {
         </span>
       </div>
 
-      <div style={{ position: "relative", padding: "72px 56px 24px", maxWidth: 1320, margin: "0 auto" }}>
+      <div className="hero-wrap" style={{ position: "relative" }}>
         {/* spotlight */}
         <div className="spotlight-gold" style={{ top: -120, right: -80, opacity: 0.6 }}/>
         <div className="spotlight-gold" style={{ bottom: 120, left: -200, opacity: 0.4 }}/>
 
         {/* Hero grid: text left, viz right */}
-        <div style={{ display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 56, alignItems: "center", position: "relative" }}>
+        <div className="hero-grid" style={{ position: "relative" }}>
           <div>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "5px 5px 5px 12px", border: "1px solid var(--hairline-2)", borderRadius: 999, marginBottom: 28, background: "rgba(255,255,255,0.02)" }}>
               <span className="overline" style={{ fontSize: 10 }}>S2 · 2026</span>
@@ -30,7 +30,7 @@ function LandingHero() {
               </span>
             </div>
 
-            <h1 style={{ fontSize: 76, lineHeight: 0.98, fontWeight: 700, letterSpacing: "-0.04em", marginBottom: 22, textWrap: "balance" }}>
+            <h1 className="ic-h hero-h1" style={{ fontWeight: 700, letterSpacing: "-0.04em", marginBottom: 22 }}>
               Apprenez des<br/>
               bâtisseurs <span style={{ color: "var(--gold)", fontStyle: "italic", fontFamily: "Space Grotesk" }}>qui ont</span><br/>
               <span style={{ position: "relative", display: "inline-block" }}>
@@ -68,12 +68,14 @@ function LandingHero() {
             </div>
           </div>
 
-          {/* RIGHT — visual showcase, "now playing" widget */}
-          <HeroVisual />
+          {/* RIGHT — visual showcase */}
+          <div className="hero-visual">
+            <HeroVisual />
+          </div>
         </div>
 
         {/* Stats row */}
-        <div className="brackets" style={{ marginTop: 56, padding: "28px 32px", border: "1px solid var(--hairline)", borderRadius: 8, background: "rgba(255,255,255,0.015)", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+        <div className="brackets stats-grid" style={{ marginTop: 56, padding: "28px 32px", border: "1px solid var(--hairline)", borderRadius: 8, background: "rgba(255,255,255,0.015)" }}>
           {[
             { num: "12", label: "Instructeurs vérifiés", sub: "Ministres, PDG, fondateurs" },
             { num: "184", label: "Leçons HD", sub: "Tournées 4K · sous-titrées" },
@@ -101,7 +103,7 @@ function LandingHero() {
               Voir tous les cours <Icon.ArrowRight size={12} color="var(--gold)" />
             </button>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }} className="parcours-grid">
             {[
               { id: "Business Starter",       icon: "🚀", color: "#F5C800", desc: "Les fondamentaux pour lancer son activité", count: 3 },
               { id: "Financial Mastery",      icon: "📊", color: "#22C55E", desc: "Maîtrise des chiffres et mécanismes de financement", count: 3 },
